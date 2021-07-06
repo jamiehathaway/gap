@@ -32,7 +32,7 @@
 
 #include <gazebo/physics/bullet/BulletSurfaceParams.hh>
 #include <gazebo/physics/ode/ODESurfaceParams.hh>
-#include <gazebo/physics/dart/DARTSurfaceParams.hh>
+//#include <gazebo/physics/dart/DARTSurfaceParams.hh>
 
 #include <thread>
 #include <condition_variable>

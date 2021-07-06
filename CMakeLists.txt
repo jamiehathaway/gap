@@ -11,8 +11,17 @@ set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # CMake safeguards e.g. prevent in-source builds
 include(safeguards)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  gazebo_ros
+)
 
 # Check dependencies
 find_package(Boost COMPONENTS system REQUIRED)
@@ -34,6 +43,22 @@ set (plugins_lib_dest "lib/${project_major_minor}")
 # Setup directories for utils installation
 set (utils_include_dest "include/${project_major_minor}")
 set (utils_lib_dest "lib/${project_major_minor}")
+
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+## INCLUDE_DIRS: uncomment this if your package contains header files
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+  INCLUDE_DIRS utils
+  LIBRARIES DRPlugin CameraUtils VisualUtils WorldUtils
+  CATKIN_DEPENDS roscpp gazebo_ros
+#  DEPENDS Boost Protobuf
+)
 
 # Add uninstall command
 add_custom_target(uninstall

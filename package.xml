@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gap</name>
+  <version>1.1.0</version>
+  <description>Gazebo Awesome Plugins domain randomisation package</description>
+
+  <maintainer email="jsh665@alumni.bham.ac.uk">jamiehathaway</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>gazebo_ros</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <exec_depend>gazebo</exec_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+    <gazebo_ros plugin_path="lib" gazebo_media_path="${prefix}" />
+  </export>
+</package>

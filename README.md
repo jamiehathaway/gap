@@ -55,14 +55,7 @@ For custom texture generation, we have developed a [pattern generation tool], wh
 
 ### Compilation
 
-Clone the repository to your workspace directory and build from source.
-
-```bash
-cd ~/workspace/gap/ &&
-mkdir build && cd build && cmake ../ && make -j8
-```
-
-Alternatively you can build each plugin/tool individually in a similar fashion.
+Clone the repository to your catkin workspace and use catkin_make
 
 ### Initialization
 
@@ -75,7 +68,6 @@ source setup.sh
 ```
 
 ### Reference
-
 These tools were developed to further our research regarding domain randomisation.
 We include a [published conference paper] and its reference for citation purposes.
 
