@@ -11,7 +11,7 @@ set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -55,9 +55,7 @@ set (utils_lib_dest "lib/${project_major_minor}")
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS utils
-  LIBRARIES DRPlugin CameraUtils VisualUtils WorldUtils
   CATKIN_DEPENDS roscpp gazebo_ros
-#  DEPENDS Boost Protobuf
 )
 
 # Add uninstall command
