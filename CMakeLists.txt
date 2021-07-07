@@ -54,7 +54,8 @@ set (utils_lib_dest "lib/${project_major_minor}")
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS utils
+  INCLUDE_DIRS utils msgs
+  LIBRARIES dr_interface
   CATKIN_DEPENDS roscpp gazebo_ros
 )
 

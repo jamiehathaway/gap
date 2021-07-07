@@ -56,6 +56,8 @@ string(REPLACE ";" "" message_headers "${headers_list}")
 configure_file (${PROJECT_SOURCE_DIR}/msgs/MessageTypes.hh.in
   ${CMAKE_CURRENT_BINARY_DIR}/MessageTypes.hh )
 
+set(gap_msgs_INCLUDE_PATH ${CMAKE_CURRENT_BINARY_DIR} CACHE INTERNAL "Path to generated protobuf files.")
+
 # Install library
 install(TARGETS gap_msgs
   DESTINATION "${msgs_lib_dest}")
